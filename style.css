@@ -14,23 +14,23 @@ body {
    HERO SECTION
    ========================================= */
 .hero-section {
-    position: relative;
+    display: flex;
+    flex-direction: column;
     height: 100vh;
-    width: 100%;
-    background: url('https://starlink.com/assets-new/images/landing/field/v4_night_sky.webp') center / cover no-repeat;
+    width: 100vw;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://starlink.com/assets-new/images/landing/field/v4_night_sky.webp') center / cover no-repeat;
     color: white;
 }
 
 .hero-nav-bar {
     display: flex;
     justify-content: space-between;
-    align-items: center;
     padding: 20px 40px;
 }
 
-.hero-nav-left, .hero-nav-right {
+.hero-nav-left,
+.hero-nav-right {
     display: flex;
-    align-items: center;
 }
 
 .hero-nav-left {
@@ -43,28 +43,26 @@ body {
 
 .hero-logo {
     width: 120px;
-    height: auto;
-}
+    
+
+}   
 
 .hero-logo img {
     display: block;
     width: 100%;
-    height: auto;
 }
 
 .hero-nav-links a {
     color: white;
-    text-decoration: none;
     font-size: 0.9rem;
-    font-weight: 500;
     margin-right: 20px;
+    text-decoration: none;
 }
 
 .hero-toggle-buttons {
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 20px;
     display: flex;
-    overflow: hidden;
 }
 
 .hero-toggle-btn {
@@ -89,10 +87,11 @@ body {
 }
 
 .hero-content {
-    position: absolute;
-    top: 50%;
-    left: 10%;
-    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+    margin-left: 10%;
     max-width: 500px;
 }
 
@@ -134,8 +133,11 @@ body {
     gap: 15px;
 }
 
-.hero-btn-primary, .hero-btn-secondary {
-    display: inline-block;
+.hero-btn-primary,
+.hero-btn-secondary {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     padding: 12px 24px;
     font-size: 1rem;
     font-weight: bold;
@@ -159,11 +161,11 @@ body {
    PRICING PLANS SECTION
    ========================================= */
 .pricing-plans-section {
-    position: relative;
-    height: 100vh;
+    /*The Width after several trials was adjusted*/
+    height: 83vh;
     width: 100%;
     padding: 60px 5%;
-    background: #000 url() center / cover no-repeat;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), #000 url(https://starlink.com/assets-new/images/landing/illustrations/illustration_08.webp) center / cover no-repeat;
 }
 
 .pricing-plan-toggle {
@@ -179,7 +181,7 @@ body {
     padding: 10px 20px;
     cursor: pointer;
     font-weight: bold;
-    border-radius: 4px;
+    border-radius: 12px;
 }
 
 .pricing-toggle-btn.active {
@@ -191,7 +193,7 @@ body {
     display: flex;
     gap: 20px;
     justify-content: center;
-    flex-wrap: wrap;
+   
 }
 
 .pricing-plan-card {
@@ -210,7 +212,8 @@ body {
     margin-bottom: 15px;
 }
 
-.pricing-card-content p, .pricing-card-content ul {
+.pricing-card-content p,
+.pricing-card-content ul {
     color: #aaa;
     font-size: 0.9rem;
     line-height: 1.5;
@@ -262,17 +265,16 @@ body {
    RELIABILITY SECTION
    ========================================= */
 .reliability-section {
-    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    padding-left: 10%;
     height: 100vh;
     width: 100%;
-    background: url(https://starlink.com/assets-new/images/landing/field/v4_lightning.webp) center / cover no-repeat;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(https://starlink.com/assets-new/images/landing/field/v4_lightning.webp) center / cover no-repeat;
 }
 
 .reliability-feature-content {
-    position: absolute;
-    top: 50%;
-    left: 10%;
-    transform: translateY(-50%);
     max-width: 450px;
 }
 
@@ -290,7 +292,9 @@ body {
 }
 
 .reliability-btn {
-    display: inline-block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: #fff;
     color: #000;
     padding: 12px 24px;
@@ -307,17 +311,15 @@ body {
    MOBILITY SECTION
    ========================================= */
 .mobility-section {
-    position: relative;
+    display: flex;
+    align-items: center;
+    padding-left: 10%;
     height: 100vh;
     width: 100%;
-    background: url(https://starlink.com/assets-new/images/landing/field/v4_car_on_ice.webp) center / cover no-repeat;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(https://starlink.com/assets-new/images/landing/field/v4_car_on_ice.webp) center / cover no-repeat;
 }
 
 .mobility-feature-content {
-    position: absolute;
-    top: 50%;
-    left: 10%;
-    transform: translateY(-50%);
     max-width: 450px;
 }
 
@@ -335,7 +337,9 @@ body {
 }
 
 .mobility-btn {
-    display: inline-block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: #fff;
     color: #000;
     padding: 12px 24px;
@@ -401,32 +405,40 @@ body {
 }
 
 .carousel-arrow-btn {
-    background: none;
+    /*the ai helped me with the buttons layout and style*/
+  width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    
+    background-color: #222222;   
+    color: #ffffff;           
+    font-size: 18px;           
     border: none;
-    color: white;
-    font-size: 1.5rem;
     cursor: pointer;
-    padding: 10px;
-}
+    outline: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+
+}  
 
 /* =========================================
    GLOBAL AVAILABILITY SECTION
    ========================================= */
 .global-availability-section {
-    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;  
+    align-items: center;
+    padding-left: 10%;
     height: 100vh;
     width: 100%;
-    background: url(https://starlink.com/assets-new/images/landing/field/v4_green_roof.webp) center / cover no-repeat;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(https://starlink.com/assets-new/images/landing/field/v4_green_roof.webp) center / cover no-repeat;
 }
 
 .global-feature-content {
-    position: absolute;
-    margin-left: auto;
-    margin-right: 50px;
-    top: 50%;
-    left: 10%;
-    transform: translate(-50%);
     max-width: 450px;
+    grid-column: 2;
 }
 
 .global-feature-content h2 {
@@ -443,7 +455,9 @@ body {
 }
 
 .global-btn {
-    display: inline-block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: #fff;
     color: #000;
     padding: 12px 24px;
@@ -460,17 +474,15 @@ body {
    INSTALLATION SECTION
    ========================================= */
 .installation-section {
-    position: relative;
+    display: flex;
+    align-items: center;
+    padding-left: 10%;
     height: 100vh;
     width: 100%;
-    background: url(https://starlink.com/assets-new/images/landing/field/v4_residential_yard.webp) center / cover no-repeat;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(https://starlink.com/assets-new/images/landing/field/v4_residential_yard.webp) center / cover no-repeat;
 }
 
 .installation-feature-content {
-    position: absolute;
-    top: 50%;
-    left: 10%;
-    transform: translateY(-50%);
     max-width: 450px;
 }
 
@@ -488,7 +500,9 @@ body {
 }
 
 .installation-btn {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     background-color: #fff;
     color: #000;
     padding: 12px 24px;
@@ -511,9 +525,7 @@ body {
 }
 
 .footer-links {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+    display: flex;  
     gap: 20px;
     margin-bottom: 30px;
 }
@@ -525,13 +537,8 @@ body {
     font-weight: bold;
 }
 
-.footer-links a:hover {
-    text-decoration: underline;
-}
-
 .footer-legal {
     display: flex;
-    justify-content: center;
     align-items: center;
     gap: 20px;
     color: #888;
